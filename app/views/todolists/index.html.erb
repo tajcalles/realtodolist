@@ -1,0 +1,22 @@
+<!-- <h1>Todolists</h1>
+<% @todolists.each do |lists|%>
+<h2><%= lists.list %></h2>
+<%= link_to 'Show lists', todolist_path(lists) %>
+<% end %> -->
+<h1>To-Do Lists</h1>
+
+<% if @todolists.any?  %>
+
+  <% @todolists.each do |lists| %>
+    <h3>
+      <%= link_to lists.list, todolist_path(lists) %>
+    </h3>
+  <% end %>
+
+<% else %>
+
+  <h4>No Lists, Please Create One!</h4>
+
+<% end %>
+<!-- <a href='/pages/new'>New Blog Post</a> -->
+<%= link_to 'New To-do List', new_todolist_path %>

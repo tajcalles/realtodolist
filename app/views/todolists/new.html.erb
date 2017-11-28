@@ -1,0 +1,26 @@
+<!-- <h1>New To-Do List</h1>
+<%= form_for @todolist do |f| %>
+  <%= f.label :list %>
+  <%= f.text_field :list %>
+
+  <%= f.label :item %>
+  <%= f.text_field :item %>
+
+  <%= f.label :status %>
+
+  <%= f.submit %>
+<% end %> -->
+<h1>New To-Do list item</h1>
+<%= form_for @todolist do |f| %>
+  <%= f.label :list %>
+  <%= f.text_field :list, required: true %>
+  <br />
+  <%= f.label :item %>
+  <%= f.text_field :item, required: true %>
+  <br />
+  <%= f.label :status %>
+  <%= f.check_box :status %>
+  <br />
+  <%= f.submit %>
+<% end %>
+<%= link_to 'All To-Do Lists', new_todolist_path, class: 'btn btn-primary' %>
